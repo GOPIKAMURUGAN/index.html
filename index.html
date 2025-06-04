@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI';
+            background-color: rgba(0, 0, 0, 0.5); 
+            color: #fff; 
+            margin: 20px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://tse4.mm.bing.net/th?id=OIF.NcVBT8u2qnmgiRK7at0ezg&pid=Api&P=0&h=180");
+            background-size: cover;       
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #77add9;
+        }
+        p {
+            font-size: 16px;
+        }
+        mark {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+        del {
+            color: red;
+        }
+        img {
+            max-width: 70px;
+            height: auto;
+            border-radius: 8px;
+            float: left;
+            margin-right: 20px;
+            
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px 0;
+        
+            
+        }
+        th, td {
+            border: 1px solid #777;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2a4d69;
+            color: white;
+        }
+        div.contact {
+            background-color: #d0e7f9;
+            padding: 15px;
+            border-radius: 6px;
+            width: fit-content;
+        }
+        span{
+            background-color: #ff5722;
+            font-weight: bold;
+        }
+        .navbar {
+            background-color: #2a4d69;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+ 
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+       .navbar a:hover {
+            background-color: #4a7dab;
+            color: white;
+        }
+
+        .tick-ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        .tick-ol li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }    
+        .tick-ol li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            color: green;
+            font-size: 18px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#routine">Daily Routine</a>
+        <a href="#Certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <h1>Welcome to My Portfolio</h1>
+
+     <img src="photo\Photo_Gopi.jpg" alt="Gopika's Portfolio Photo" />
+
+    <h2 id="about">About Me</h2>
+    <p>Hello! My name is <b>Gopika</b>. from department of <strong> Artificial Intelligence and Data Science</strong>  a passionate learner in <u>web developer</u>. I have a passion for <span>creating interactive and user-friendly</span> web applications.</p>
+    <h3 id="hobbies">My Hobbies</h3>
+    <p>I enjoy <i>listening to music</i> and <i>playing Kho Kho</i>.</p>
+    <h4 id="achievements">Achievements</h4>
+    <p>I completed projects in <mark>Cool Drink Detection and Analysis using AI.</mark> </p>
+    <h5>Mistakes I Corrected</h5>
+    <p>I once thought <del>HTML is a programming language</del>, but now I know it’s a <strong>markup language</strong>.</p>
+    <h6>Motivational Quote</h6>
+    <p>A quote I like:<br>
+    <pre>
+    “Success is not final,
+    Failure is not fatal:
+    It is the courage to continue that counts.”
+    </pre>
+    </p>
+    
+    <hr>
+
+    <h3 id="technologies">Technologies I Know</h3>
+    <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Power BI</li>
+        <li>SQL</li>
+    </ul>
+
+    <h3 id="routine">My Daily Routine</h3>
+    <ol  class="tick-ol">
+        <li>Wake up at 5:00 AM</li>
+        <li >Have breakfast and review my to-do list</li>
+        <li>Attend classes or work on projects</li>
+        <li >Take a short afternoon break</li>
+        <li>Study or revise topics </li>
+        <li>Spend time with family or do hobbies</li>
+        <li>Go to bed by 10:00 PM</li>
+    </ol>
+
+    <h3 id="Certifications">Certifications</h3>
+    <ol><dl>
+       <li><dt>Python</dt></li>
+       <dd>Python for data Science.</dd>
+       <li><dt>AWS</dt></li>
+       <dd>AWS Cloud.</dd>
+       
+    </dl></ol>
+    <h3 id="projects"> Project Status</h3>
+   <table>
+        <tr>
+            <th colspan = "3">Project</th>
+            
+        </tr>
+        <tr>
+           <td rowspan = "3">Cool Drink Detection</td>
+           <td>Completed</td>
+           <td>100%</td>
+        </tr>
+        <tr>
+            
+            <td>In Progress</td>
+            <td>75%</td>
+        </tr>
+        <tr>
+            
+            <td>Planned</td>
+            <td>0%</td>
+        </tr>
+        
+    </table>
+
+    <hr>
+    <div id = "contact">
+        <h2>Contact Me</h2>
+        <p>Email: <mark>gopikamuru47@gmail.com</mark></p>
+        <p>Phone: 7845473024</p>
+        <p>Location: Chennai, India</p>
+        <img src = "https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png" alt="LinkedIn Logo" style="width: 30px; height: 30px;"/>
+        <a href="https://www.linkedin.com/in/gopika-m-70ba8423b/" target="_blank">LinkedIn Profile</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Registration Form</title>
+</head>
+<body>
+  <h2>Event Registration Form</h2>
+  
+  <form id="regForm" action= "#" method="post" autocomplete="on">
+
+    <video width="320" height="240" controls >
+        <source src="photo/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <audio controls >
+        <source src="photo/audio.mp3" type="audio/mpeg">
+        
+    </audio><br><br>
+  
+    
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" autofocus required><br><br>
+    
+    
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+    
+    
+    <label for="password">Create Password:</label>
+    <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+    
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="16" max="30" placeholder="Enter your age" required><br><br>
+    
+    
+    <label for="countrycode">Country Code:</label>
+    <select id="countrycode" name="countrycode" required>
+        <option value="+91" selected>+91 (India)</option>
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+61">+61 (Australia)</option>
+        <option value="+81">+81 (Japan)</option>
+    </select>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" pattern="[0-9]{7,15}" required><br><br>
+
+    
+    
+    <label for="website">Your Website (optional):</label>
+    <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+    
+    
+    <label for="eventdate">Preferred Event Date:</label>
+    <input type="date" id="eventdate" name="eventdate" required><br><br>
+    
+    
+    <label for="eventmonth">Preferred Event Month:</label>
+    <input type="month" id="eventmonth" name="eventmonth"><br><br>
+    
+    
+    <label for="eventweek">Preferred Event Week:</label>
+    <input type="week" id="eventweek" name="eventweek"><br><br>
+    
+    
+    <label for="eventtime">Preferred Time:</label>
+    <input type="time" id="eventtime" name="eventtime"><br><br>
+    
+    
+    <label for="favcolor">Favorite Color (for theme):</label>
+    <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+    
+    
+    <label for="profilepic">Upload Profile Picture:</label>
+    <input type="file" id="profilepic" name="profilepic" accept="image/*"><br><br>
+    
+    
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="Male" required>
+    <label for="male">Male</label><br>
+    
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label><br>
+    
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label><br><br>
+    
+    <input type="checkbox" id="subscribe" name="subscribe" value="Yes">
+    <label for="subscribe">Subscribe to newsletter</label><br><br>
+    
+    
+    <label for="satisfaction">Event Satisfaction (1-10):</label><br>
+    <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" step="2" value="5"><br><br>
+    
+    
+    <label for="topics-select">Select Event Topic:</label><br>
+    <select id="topics-select" name="topics-select" required>
+        <option value="">--Choose a topic--</option>
+        <option value="AI and Machine Learning">AI and Machine Learning</option>
+        <option value="Data Science">Data Science</option>
+        <option value="Cloud Computing">Cloud Computing</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Mobile App Development">Mobile App Development</option>
+        <option value="Blockchain">Blockchain</option>
+        <option value="IoT">IoT</option>
+    </select><br><br>
+
+    
+    
+    <button type="button" onclick="alert('Thanks for visiting!')">Click Me</button><br><br>
+    
+    
+    <input type="reset" value="Reset Form"><br><br>
+    
+    
+    <input type="submit" value="Register">
+
+    
+
+    
+  </form>
+  <div id="output"></div>
+  <script>
+    document.getElementById('regForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const fullname = document.getElementById('fullname').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const age = document.getElementById('age').value;
+        const countrycode = document.getElementById('countrycode').value;
+        const phone = document.getElementById('phone').value;
+        const website = document.getElementById('website').value;
+        const eventdate = document.getElementById('eventdate').value;
+        const eventmonth = document.getElementById('eventmonth').value;
+        const eventweek = document.getElementById('eventweek').value;
+        const eventtime = document.getElementById('eventtime').value;
+        const favcolor = document.getElementById('favcolor').value;
+        const profilePicInput = document.getElementById('profilepic');
+        const profilePicName = profilePicInput.files.length > 0 ? profilePicInput.files[0].name : 'No file selected';
+        const genderElems = document.getElementsByName('gender');
+        let gender = '';
+        for (const elem of genderElems) {
+            if (elem.checked) {
+                gender = elem.value;
+                break;
+            }
+        }
+        const subscribe = document.getElementById('subscribe').checked ? 'Yes' : 'No';
+        const satisfaction = document.getElementById('satisfaction').value;
+        const topicSelect = document.getElementById('topics-select').value;
+
+        sessionStorage .setItem('fullname', fullname); 
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('password', password);
+        sessionStorage.setItem('age', age);
+        sessionStorage.setItem('countrycode', countrycode);
+        sessionStorage.setItem('phone', phone);
+        
+        localStorage.setItem('website', website);
+        localStorage.setItem('eventdate', eventdate); 
+        localStorage.setItem('eventmonth', eventmonth);
+        localStorage.setItem('eventweek', eventweek);
+        localStorage.setItem('eventtime', eventtime);
+        localStorage.setItem('favcolor', favcolor);
+
+        alert("Form data saved in session and local storage!");
+
+        const outputHTML = 
+        `<h3>Registration Details</h3>
+        <p><strong>Full Name:</strong> ${fullname}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Password:</strong> ${password}</p>
+        <p><strong>Age:</strong> ${age}</p>
+        <p><strong>Country Code:</strong> ${countrycode}</p>
+        <p><strong>Phone Number:</strong> ${phone}</p>
+        <p><strong>Website:</strong> ${website}</p>
+        <p><strong>Preferred Event Date:</strong> ${eventdate}</p>
+        <p><strong>Preferred Event Month:</strong> ${eventmonth}</p>
+        <p><strong>Preferred Event Week:</strong> ${eventweek}</p>
+        <p><strong>Preferred Time:</strong> ${eventtime}</p>
+        <p><strong>Favorite Color:</strong> <span style="color:${favcolor}">${favcolor}</span></p>
+        <p><strong>Profile Picture:</strong> ${profilePicName}</p>
+        <p><strong>Gender:</strong> ${gender}</p>
+        <p><strong>Subscribe to Newsletter:</strong> ${subscribe}</p>
+        <p><strong>Event Satisfaction:</strong> ${satisfaction}</p>
+        <p><strong>Selected Topic:</strong> ${topicSelect}</p>`;
+        document.getElementById('output').innerHTML = outputHTML;
+
+        
+        
+        });
+  </script>
+</body>
+</html>
